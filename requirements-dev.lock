@@ -1,4 +1,6 @@
-# Pinned development dependencies resolved for the preparation scaffold.
+# Pinned development dependencies resolved for the scaffold and typed foundations.
+# HTTPX and Pydantic are declared directly for source transport and strict contracts;
+# their resolved lock versions are unchanged.
 # Install these, then install this project with pip install --no-deps -e .
 annotated-doc==0.0.6
 annotated-types==0.8.0

@@ -33,11 +33,24 @@ that changing its interface and model automatically gives BeforeRun feature pari
 7. Give a future coding session the implementation brief in section 30. Ask it to
    implement one stage, not the entire roadmap in one uncontrolled change.
 
+### Two-agent parallel split
+
+To build with **two agents at once**, do **not** split this file by line count. Use the
+equal ownership halves (file trees, stages, and sync points):
+
+| Agent | Document | Owns |
+|---|---|---|
+| **A — Core engine** | [AGENT_A_BUILD_HALF.md](AGENT_A_BUILD_HALF.md) | S01–S05, S07–S09: contracts, GitHub snapshot, evidence, npm context, `br_` tools, OpenClaw investigator, validate/report |
+| **B — Product surface** | [AGENT_B_BUILD_HALF.md](AGENT_B_BUILD_HALF.md) | S06, S10–S13: compare, jobs API, UI, fixtures/demo packaging, gate runs, measure/release |
+
+Shared: S00 kickoff. Sync after S02 (contracts), after S03–S04 (snapshot/evidence for compare), after S09 (pipeline → jobs/UI). Agent B stubs the pipeline until that handoff. Each half has a copyable agent prompt at the top.
+
 Every proposed module, route, tool, CLI command, fixture, and result below is **future
 work unless explicitly marked as existing**. Writing this plan does not implement them.
 
 ## Contents
 
+- Two-agent split: [AGENT_A_BUILD_HALF.md](AGENT_A_BUILD_HALF.md) · [AGENT_B_BUILD_HALF.md](AGENT_B_BUILD_HALF.md)
 - [1. Verified starting point](#1-verified-starting-point)
 - [2. Product definition and users](#2-product-definition-and-users)
 - [3. Gatekeeper's actual method](#3-gatekeepers-actual-method)

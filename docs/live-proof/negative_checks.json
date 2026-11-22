@@ -1,0 +1,22 @@
+[
+  {
+    "case": "gateway_auth_denial",
+    "error_code": "OPENCLAW_UNAVAILABLE",
+    "wall_ms": 285.56399999797577,
+    "app_model_attempts": 1,
+    "checked_report_created": false,
+    "configuration_changed": false
+  },
+  {
+    "case": "local_gateway_request_cancellation",
+    "request_active_at_cancel": true,
+    "error_code": "REVIEW_CANCELLED",
+    "subsequent_error_code": "REVIEW_CANCELLED",
+    "http_requests": 1,
+    "no_new_requests_after_cancel": true,
+    "wall_ms": 54.8977090002154,
+    "app_model_attempts": 1,
+    "provider_abort": "unconfirmed",
+    "active_upstream_inference": "not established because the provider route is failing"
+  }
+]

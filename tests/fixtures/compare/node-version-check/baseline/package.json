@@ -1,0 +1,7 @@
+{
+  "name": "beforerun-inert-version-fixture",
+  "private": true,
+  "scripts": {
+    "prepare": "node scripts/check-node.js"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "candidate_kind": "local offline product snapshot; release blocked",
+  "root_files": [
+    ".env.example",
+    ".gitignore",
+    ".github/workflows/scaffold-checks.yml",
+    "Makefile",
+    "LICENSE",
+    "NOTICE",
+    "pyproject.toml",
+    "requirements-dev.lock"
+  ],
+  "trees": ["src", "tests", "docs/live-proof", "docs/demo"],
+  "documents": [
+    "docs/CORE_GATE_RESULTS.json",
+    "docs/MOCK_MEASUREMENTS.json",
+    "docs/EVALUATION_RESULTS.md",
+    "docs/LOCAL_RUNBOOK.md",
+    "docs/RELEASE_GATES.md",
+    "docs/LIVE_PROOF_TEMPLATE.md",
+    "docs/LIVE_ROUTE_DIAGNOSIS.md",
+    "docs/BASETEN_GATEWAY_SETUP.md",
+    "docs/INTEGRATION_LIMITS.md",
+    "docs/DEPENDENCY_NOTICES.md",
+    "docs/ATTRIBUTION_DRAFT.md",
+    "docs/RELEASE_LICENSE_REVIEW.md",
+    "docs/release-candidate/APACHE-2.0.txt",
+    "docs/release-candidate/README.md",
+    "docs/release-candidate/README.product.md",
+    "docs/release-candidate/SCOPE.json"
+  ],
+  "mapped_files": {
+    "README.md": "docs/release-candidate/README.product.md"
+  },
+  "exclude_path_components": [
+    ".git", ".venv", "__pycache__", ".pytest_cache", ".ruff_cache", "memory"
+  ],
+  "exclude_suffixes": [".pyc", ".pyo", ".log", ".DS_Store"],
+  "exclude_component_suffixes": [".egg-info", ".dist-info"],
+  "exclusions": [
+    "private assistant identity/instructions/memory",
+    "existing Git history and metadata",
+    "actual environment/credential files and managed Gateway state",
+    "raw provider/Gateway logs and transcripts",
+    "historical planning documents and design screenshots",
+    "installed dependencies and operator tools"
+  ],
+  "publication": "not authorized or performed",
+  "effective_project_license": "Apache-2.0; owner selected in this task"
+}

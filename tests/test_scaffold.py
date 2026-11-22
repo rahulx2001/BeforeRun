@@ -1,68 +1,42 @@
-"""Regression checks for the existing scaffold, not scanner behavior."""
-
-from html.parser import HTMLParser
-from pathlib import Path
+"""Static application and OpenAPI surface checks for the connected local MVP."""
 
 from fastapi.testclient import TestClient
 
-from beforerun.app import STATIC_DIR, app
+from beforerun.app import app
 
 
-class ReviewFormParser(HTMLParser):
-    """Read only the markup properties needed by the scaffold contract."""
+def test_health_static_routes_and_security_headers() -> None:
+    with TestClient(app, base_url="http://127.0.0.1") as client:
+        response = client.get("/health")
+        assert response.status_code == 200
+        assert response.json()["phase"] == "mvp"
+        assert response.json()["readiness_claimed"] is False
 
-    def __init__(self) -> None:
-        super().__init__()
-        self.disabled_fieldsets = 0
-        self.command_options: list[str] = []
-        self._in_command_select = False
-
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        attributes = dict(attrs)
-        if tag == "fieldset" and "disabled" in attributes:
-            self.disabled_fieldsets += 1
-        if tag == "select" and attributes.get("name") == "command_context":
-            self._in_command_select = True
-        elif tag == "option" and self._in_command_select:
-            value = attributes.get("value")
-            if value is not None:
-                self.command_options.append(value)
-
-    def handle_endtag(self, tag: str) -> None:
-        if tag == "select":
-            self._in_command_select = False
+        for path in (
+            "/",
+            "/static/styles.css",
+            "/static/shell.js",
+            "/static/reviews.js",
+            "/static/icons.svg",
+            "/static/mark.svg",
+            "/static/review-illustration.svg",
+        ):
+            response = client.get(path)
+            assert response.status_code == 200, path
+            assert response.content, path
+            assert response.headers["x-content-type-options"] == "nosniff"
+            assert response.headers["x-frame-options"] == "DENY"
 
 
-def test_health_and_static_scaffold_routes() -> None:
-    client = TestClient(app)
-
-    response = client.get("/health")
-    assert response.status_code == 200
-    assert response.json()["phase"] == "scaffold"
-
-    for path in (
-        "/",
-        "/static/styles.css",
-        "/static/shell.js",
-        "/static/icons.svg",
-        "/static/mark.svg",
-        "/static/review-illustration.svg",
-    ):
-        response = client.get(path)
-        assert response.status_code == 200, path
-        assert response.content, path
-
-
-def test_review_form_is_disabled_and_limited_to_the_master_scope() -> None:
-    parser = ReviewFormParser()
-    parser.feed(Path(STATIC_DIR, "index.html").read_text(encoding="utf-8"))
-
-    assert parser.disabled_fieldsets == 1
-    assert parser.command_options == ["review_only", "npm_install"]
-
-
-def test_scaffold_does_not_advertise_a_review_api() -> None:
-    client = TestClient(app)
-
-    assert set(app.openapi()["paths"]) == {"/health"}
-    assert client.get("/api/reviews").status_code == 404
+def test_openapi_exposes_only_owned_api_surface() -> None:
+    paths = set(app.openapi()["paths"])
+    assert "/health" in paths
+    assert "/api/capabilities" in paths
+    assert "/api/reviews" in paths
+    assert "/api/reviews/{review_id}" in paths
+    assert "/api/reviews/{review_id}/events" in paths
+    assert "/api/reviews/{review_id}/evidence/{evidence_id}" in paths
+    assert "/api/reviews/{review_id}/cancel" in paths
+    assert "/api/reviews/{review_id}/export" in paths
+    assert not any("openclaw" in path.lower() or "cerebras" in path.lower() for path in paths)
+    assert not any("questions" in path or "execute" in path for path in paths)

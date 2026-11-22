@@ -1,0 +1,7 @@
+{
+  "name": "beforerun-inert-unsupported-fixture",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "node -e \"console.log('annotation-only inline fixture')\""
+  }
+}

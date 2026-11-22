@@ -1,0 +1,11 @@
+{
+  "tools": {
+    "deny": [
+      "*"
+    ]
+  },
+  "contextInjection": "never",
+  "startupContext": {
+    "enabled": false
+  }
+}

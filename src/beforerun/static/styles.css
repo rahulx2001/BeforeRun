@@ -131,6 +131,8 @@ input, select { width: 100%; min-height: 44px; padding: 11px 13px; border: 1px s
 input::placeholder { color: var(--muted); opacity: 1; }
 input:disabled, select:disabled { color: var(--muted); -webkit-text-fill-color: var(--muted); }
 .helper { margin: 7px 0 16px; font-size: 9px; color: var(--muted); line-height: 1.6; }
+.field-error { color: var(--danger); }
+input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--danger); }
 .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .field-grid + .field { margin-top: 16px; }
 .optional { font-size: 9px; color: var(--muted); font-weight: 400; }
@@ -345,3 +347,48 @@ input:disabled, select:disabled { color: var(--muted); -webkit-text-fill-color: 
   .decision-title { font-size: 23px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .sidebar { transition: none; } }
+
+/* Live, API-backed review states. Untrusted values are rendered by reviews.js as text. */
+.assumptions { margin: 16px 0 0; padding: 12px 13px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface-soft); }
+.assumptions summary { cursor: pointer; color: var(--text); font-size: 10px; font-weight: 550; }
+.assumptions p { color: var(--muted); font-size: 9px; line-height: 1.8; margin: 10px 0 0; }
+.review-output { min-width: 0; }
+.review-live { display: grid; gap: 18px; margin-top: 8px; }
+.review-live > .decision-card { border-left-width: 4px; }
+.report-meta-panel { padding: 19px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.report-meta-panel .report-meta { padding: 0; flex: 1; }
+.report-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+.report-actions .button { min-height: 34px; }
+.findings-section { display: grid; gap: 14px; }
+.findings-section > h2 { font-size: 17px; margin: 8px 0 0; }
+.finding-facts { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 10px 16px; margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--border); font-size: 10px; line-height: 1.7; }
+.finding-facts dt { color: var(--text); font-weight: 550; }
+.finding-facts dd { color: var(--muted); margin: 0; overflow-wrap: anywhere; }
+.evidence-card { margin: 0 20px 15px; overflow: hidden; }
+.evidence-card > summary { cursor: pointer; padding: 13px 15px; font-size: 10px; font-weight: 550; overflow-wrap: anywhere; }
+.evidence-card > .text-link { margin: 0 15px 15px; }
+.evidence-caption { margin: 0; padding: 10px 15px; border-top: 1px solid var(--border); color: var(--muted); font-size: 8px; line-height: 1.7; overflow-wrap: anywhere; }
+.actual-source { margin: 0; padding: 14px 0; background: var(--code); color: var(--code-text); overflow-x: auto; font: 10px/1.9 "SFMono-Regular", Consolas, monospace; }
+.actual-source-line { display: flex; min-width: max-content; }
+.actual-line-number { width: 58px; padding-right: 14px; text-align: right; color: #a4b69b; user-select: none; }
+.actual-line-text { white-space: pre; padding-right: 20px; font: inherit; }
+.coverage-card { padding: 22px; }
+.coverage-numbers { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 24px; margin: 16px 0; }
+.coverage-numbers dt { align-self: center; color: var(--muted); font-size: 8px; }
+.coverage-numbers dd { margin: 0; font-size: 20px; text-align: right; }
+.coverage-card > p { font-size: 10px; line-height: 1.8; color: var(--muted); }
+.comparison-panel { padding: 22px; }
+.comparison-list { display: grid; gap: 13px; margin-top: 15px; }
+.comparison-entry { padding: 14px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.comparison-entry h3 { margin: 0 0 12px; font-size: 11px; overflow-wrap: anywhere; }
+.diff-view { max-height: 360px; overflow: auto; margin: 0 0 12px; padding: 13px; border-radius: 6px; background: var(--code); color: var(--code-text); font: 9px/1.8 "SFMono-Regular", Consolas, monospace; white-space: pre; }
+.report-provenance { padding: 0 20px; color: var(--muted); font-size: 9px; line-height: 1.8; }
+.report-provenance p { overflow-wrap: anywhere; }
+.report-bottom { align-items: center; }
+@media (max-width: 680px) {
+  .report-meta-panel { align-items: flex-start; flex-direction: column; }
+  .finding-facts { grid-template-columns: 1fr; gap: 5px; }
+  .finding-facts dd { margin-bottom: 11px; }
+  .evidence-card { margin-inline: 10px; }
+  .report-actions .button { min-height: 42px; }
+}

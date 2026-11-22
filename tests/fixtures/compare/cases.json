@@ -1,0 +1,38 @@
+{
+  "synthetic": true,
+  "source_identity": "example/inert-fixture; synthetic pinned target and baseline",
+  "command_context": "Root npm_install; static source only, never executed",
+  "acceptable_assessment": "Benign compatibility behavior; incomplete counterparts remain qualified",
+  "required_omissions": ["Runtime execution", "Dependencies", "Artifacts", "Whole-repository safety"],
+  "label_authority": "Human-authored expected behavior labels for later Agent A validation; tree changes alone do not establish them",
+  "cases": [
+    {
+      "id": "existing",
+      "setup": "Both revisions have the same prepare entry and Node 20 compatibility helper",
+      "expected_change_status": "existing",
+      "required_evidence": "Both original-side entry and helper excerpts, even with identical bytes",
+      "benign_alternative": "The same ordinary runtime check in both revisions"
+    },
+    {
+      "id": "changed_entry",
+      "setup": "The same Node 20 helper moves from prepare to preinstall in the entry manifest",
+      "expected_change_status": "changed",
+      "required_evidence": "Changed manifest and unchanged helper on both original sides",
+      "benign_alternative": "Intentional movement of a compatibility check to an earlier lifecycle phase"
+    },
+    {
+      "id": "removed",
+      "setup": "Baseline has a prepare entry and Node 20 helper; both are absent in a complete target inventory",
+      "expected_change_status": "removed",
+      "required_evidence": "Original baseline entry/helper plus complete corresponding target inventory",
+      "benign_alternative": "The project no longer needs this runtime compatibility check"
+    },
+    {
+      "id": "unknown",
+      "setup": "Target helper is readable; corresponding baseline source or inventory is unavailable",
+      "expected_change_status": "unknown",
+      "required_evidence": "Retain target excerpt and disclose missing baseline; do not fabricate an addition diff",
+      "benign_alternative": "The helper may already exist or differ in the unread baseline"
+    }
+  ]
+}

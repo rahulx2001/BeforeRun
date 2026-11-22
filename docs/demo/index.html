@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' file:;
+style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; base-uri 'none';
+form-action 'none'">
+<title>BeforeRun — offline fixture storyboard</title>
+<style>
+body{margin:0;background:#f4f4ee;color:#25392e;font:16px/1.5 system-ui,sans-serif}
+header,main,footer{max-width:1100px;margin:auto;padding:24px}
+header{border-bottom:2px solid #8b5b23;background:#fff2da}
+h1{font-size:24px;margin:0 0 8px}p{margin:8px 0}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+button{font:inherit;border:1px solid #637366;border-radius:6px;padding:8px 16px;
+background:#fffef9;color:#25392e;cursor:pointer}
+button:focus-visible{outline:3px solid #21553b;outline-offset:2px}
+figure{margin:0}img{width:100%;height:auto;display:block;border:1px solid #dce3d6}
+figcaption{padding:12px 0}footer{font-size:14px;border-top:1px solid #dce3d6}
+</style></head><body>
+<header><h1>MOCKED FIXTURE — no live model</h1>
+<p>BeforeRun's real interface, replayed with a saved checked-report fixture and mocked APIs.</p>
+<p>No GitHub retrieval, OpenClaw/Cerebras inference, submitted-source execution,
+or malware evaluation occurred.</p></header>
+<main><div class="controls"><button id="previous">Previous</button>
+<button id="play" aria-pressed="false">Play storyboard</button>
+<button id="next">Next</button></div>
+<figure><img id="frame" src="01-input.png" alt="Fixture form with target and baseline revisions">
+<figcaption id="caption" aria-live="polite"></figcaption></figure></main>
+<footer><p>The example repository, hashes, evidence IDs, validation flags,
+and 12 ms duration are synthetic fixture data. They are not live checked-citation
+or performance evidence.</p>
+<p>The Node 20 → 22 comparison is an inert compatibility example. The concern is a simulation;
+partial coverage, unread helpers, dependencies, downloads and native binaries stay visible.</p>
+<p>The retained live smoke attempts failed. Effective Gateway isolation, successful Kimi/Cerebras
+delivery, checked citations and real latency/tokens/cost remain unresolved.
+This recording does not enable reviews or publication.</p></footer>
+<script>
+const slides = [
+ ["01-input.png", "1 / 4 — Select synthetic target and baseline revisions. "
+   + "Mock capabilities enable only this isolated replay."],
+ ["02-report.png", "2 / 4 — Partial fixture report and Node 20 → 22 comparison. "
+   + "Assessment, completion and scope are separate."],
+ ["03-evidence.png", "3 / 4 — Open original-line fixture text. HTML-looking source remains inert; "
+   + "the finding is explicitly simulated."],
+ ["04-coverage.png", "4 / 4 — Read missing required evidence, excluded surfaces "
+   + "and processing assumptions. Cost is unknown."]
+];
+let current = 0, timer = null;
+const draw = () => {
+ document.getElementById("frame").src = slides[current][0];
+ document.getElementById("frame").alt = slides[current][1];
+ document.getElementById("caption").textContent = slides[current][1];
+};
+document.getElementById("previous").onclick = () => {
+ current = (current + slides.length - 1) % slides.length; draw();
+};
+document.getElementById("next").onclick = () => {
+ current = (current + 1) % slides.length; draw();
+};
+document.getElementById("play").onclick = () => {
+ const button = document.getElementById("play");
+ if (timer) {
+  clearInterval(timer); timer = null; button.textContent = "Play storyboard";
+  button.setAttribute("aria-pressed", "false");
+ } else {
+  timer = setInterval(() => { current = (current + 1) % slides.length; draw(); }, 8000);
+  button.textContent = "Pause storyboard"; button.setAttribute("aria-pressed", "true");
+ }
+};
+draw();
+</script></body></html>

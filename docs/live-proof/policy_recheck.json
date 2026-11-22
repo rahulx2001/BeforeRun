@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-11-22T09:46:06.643881+00:00",
+  "source": "dedicated profile saved configuration; no Gateway/model request",
+  "agent": "beforerun-reviewer",
+  "tools": {
+    "deny": ["*"]
+  },
+  "contextInjection": "never",
+  "startupContext": null,
+  "default_startupContext": {
+    "enabled": false
+  },
+  "model": {
+    "primary": "cerebras/moonshotai-kimi-k3.1-pro-trial",
+    "fallbacks": []
+  },
+  "gateway_bind": "loopback",
+  "agent_to_agent_enabled": false,
+  "matches_pre_run_tools": true,
+  "runtime_policy_application": "not independently confirmed"
+}

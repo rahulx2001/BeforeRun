@@ -2,8 +2,10 @@
 
 Inspiration: [Gatekeeper](https://github.com/lb2002/gatekeeper) by **lb2002**.
 
-No Gatekeeper application code has been copied into this preparation scaffold.
-Its files are a new generic framework/interface skeleton.
+No Gatekeeper application modules were introduced by this S09–S13 implementation.
+The local prototype now contains source/context analysis, snapshot tools, an OpenClaw
+adapter, checked reports, owned jobs and a browser surface. Review prior code and
+framework/dependency notices before publication; this note is not a completed license review.
 
 Before the first public repository release or hackathon submission:
 
@@ -14,10 +16,14 @@ Before the first public repository release or hackathon submission:
 4. Select and include this project's publication license. Do not publish without resolving
    the license and attribution details.
 
-Proposed wording, to revise based on what is actually implemented:
+Implemented-prototype wording:
 
-> BeforeRun is inspired by Gatekeeper by lb2002. [Describe the features we implemented
-> during the event, and separately name any reused code or components.]
+> BeforeRun is inspired by Gatekeeper by lb2002. It adapts evidence-first, non-executing
+> investigation to pinned public GitHub setup source, with bounded snapshot tools,
+> OpenClaw orchestration, checked references, source comparison and owned review jobs.
+> The current validation and measurements are development fixtures; live upstream-model
+> identity and model quality are not established by those fixtures. This implementation
+> does not copy Gatekeeper application modules or imply upstream endorsement.
 
 Adding attribution after a public submission does not retroactively correct its claims
 or missing required notices. A separate thank-you post can come after the hackathon.

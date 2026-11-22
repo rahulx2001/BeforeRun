@@ -1,0 +1,42 @@
+{
+  "tools": {
+    "deny": [
+      "read",
+      "write",
+      "edit",
+      "apply_patch",
+      "exec",
+      "process",
+      "browser",
+      "web_fetch",
+      "web_search",
+      "gateway",
+      "message",
+      "sessions_spawn",
+      "sessions_send",
+      "sessions_list",
+      "sessions_history",
+      "memory_search",
+      "memory_get",
+      "openclaw",
+      "bundle-mcp",
+      "github_read",
+      "github_search",
+      "github_publish",
+      "transcripts"
+    ],
+    "allow": [
+      "br_read_excerpt"
+    ]
+  },
+  "contextInjection": "never",
+  "startupContext": {
+    "enabled": false
+  },
+  "model": {
+    "primary": "cerebras/moonshotai-kimi-k3.1-pro-trial",
+    "fallbacks": []
+  },
+  "loopback": true,
+  "agent_to_agent_enabled": false
+}

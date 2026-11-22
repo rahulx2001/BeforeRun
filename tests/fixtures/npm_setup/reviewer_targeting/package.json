@@ -1,0 +1,7 @@
+{
+  "name": "beforerun-inert-reviewer-text-fixture",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "node scripts/message.cjs"
+  }
+}

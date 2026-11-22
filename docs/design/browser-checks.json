@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "name": "home-desktop",
+      "title": "BeforeRun — Review before you run",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "theme": "light",
+      "visiblePreviewPanels": [],
+      "disabledReviewForm": true,
+      "imagesLoaded": true,
+      "duplicateIds": [],
+      "screenshot": "/Users/rahulkumarsinghj/Desktop/BeforeRun/docs/design/home-desktop.png"
+    },
+    {
+      "name": "report-desktop",
+      "title": "BeforeRun — Illustrated report screens",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "theme": "light",
+      "visiblePreviewPanels": [
+        "needs-review"
+      ],
+      "disabledReviewForm": null,
+      "imagesLoaded": true,
+      "duplicateIds": [],
+      "screenshot": "/Users/rahulkumarsinghj/Desktop/BeforeRun/docs/design/report-desktop.png"
+    },
+    {
+      "name": "home-mobile",
+      "title": "BeforeRun — Review before you run",
+      "viewport": 390,
+      "documentWidth": 390,
+      "theme": "light",
+      "visiblePreviewPanels": [],
+      "disabledReviewForm": true,
+      "imagesLoaded": true,
+      "duplicateIds": [],
+      "screenshot": "/Users/rahulkumarsinghj/Desktop/BeforeRun/docs/design/home-mobile.png"
+    },
+    {
+      "name": "report-mobile",
+      "title": "BeforeRun — Illustrated report screens",
+      "viewport": 390,
+      "documentWidth": 390,
+      "theme": "light",
+      "visiblePreviewPanels": [
+        "needs-review"
+      ],
+      "disabledReviewForm": null,
+      "imagesLoaded": true,
+      "duplicateIds": [],
+      "screenshot": "/Users/rahulkumarsinghj/Desktop/BeforeRun/docs/design/report-mobile.png"
+    },
+    {
+      "name": "report-dark",
+      "title": "BeforeRun — Illustrated report screens",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "theme": "light",
+      "visiblePreviewPanels": [
+        "needs-review"
+      ],
+      "disabledReviewForm": null,
+      "imagesLoaded": true,
+      "duplicateIds": [],
+      "screenshot": "/Users/rahulkumarsinghj/Desktop/BeforeRun/docs/design/report-dark.png"
+    }
+  ],
+  "previewTabs": 5,
+  "keyboardNavigation": true,
+  "mobileNavigation": true,
+  "themePersistence": true,
+  "browserErrors": [],
+  "apiRequests": [],
+  "profileUsesUserHistory": false
+}

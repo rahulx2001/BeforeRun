@@ -1,0 +1,107 @@
+{
+  "recorded_at_utc": "2026-11-22T10:44:42.278545+00:00",
+  "scope": "Prepared local working tree, offline contracts and mocked browser workflow",
+  "head_at_checks": "55d81c3f1ca078d83151bc057ca0833fec329632",
+  "working_tree_dirty": true,
+  "release_revision_frozen": true,
+  "checks": [
+    {
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH make check",
+      "exit_code": 0,
+      "compileall": "passed",
+      "ruff_check": "passed",
+      "ruff_format": "passed",
+      "pytest_passed": 293,
+      "pytest_deselected": 1,
+      "warnings": 1
+    },
+    {
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH make browser-check",
+      "exit_code": 0,
+      "pytest_passed": 1,
+      "pytest_deselected": 293,
+      "warnings": 1,
+      "transport": "real installed Chrome; application API responses mocked"
+    },
+    {
+      "command": ".venv/bin/python -m ruff check tests/fixtures/demo/record_demo.py",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python -m ruff format --check tests/fixtures/demo/record_demo.py",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python tests/fixtures/demo/record_demo.py --output /tmp/beforerun-offline-demo-final",
+      "exit_code": 0,
+      "rendered_fixture_states": 4,
+      "visually_reviewed_frames": 4,
+      "network_or_model_requests": 0
+    },
+    {
+      "check": "isolated Chrome storyboard interaction probe",
+      "result": "passed",
+      "verified": [
+        "image loaded",
+        "next",
+        "previous",
+        "play",
+        "pause"
+      ],
+      "network_or_model_requests": 0
+    }
+  ],
+  "warning": "Existing Starlette TestClient/httpx deprecation warning; no dependency installed or changed.",
+  "final_candidate_checks": {
+    "recorded_at_utc": "2026-11-22T11:46:59.730491+00:00",
+    "commit": "b443a5d9f24878775420b7c149f51b3a55e2a98b",
+    "product_content_sha256": "8565c34b8cb344959bb8336d68a4077feab36fafd1e817f8e31c598209ad4458",
+    "product_files": 129,
+    "committed_files_including_manifest": 130,
+    "archive_hashes_verified": true,
+    "compileall": "passed",
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "offline_pytest_passed": 316,
+    "offline_pytest_deselected": 1,
+    "browser_pytest_passed": 1,
+    "browser_pytest_deselected": 316,
+    "browser_transport": "real installed Chrome, mocked application APIs",
+    "existing_deprecation_warnings_per_selection": 1,
+    "provider_inference_requests": 0,
+    "release_ready": false,
+    "status": "passed against archive exported from exact parentless local commit",
+    "original_branch_and_staging_preserved": true,
+    "reexport_reproducible": true,
+    "credential_review": "RELEASE_SECRET_REVIEW.json final_frozen_candidate_review",
+    "free_only_authorization_prerequisite": "unverified account/model free allowance; no inference run"
+  },
+  "live_model_quality_or_billing_established": false,
+  "public_release_ready": false,
+  "baseten_configuration_checks": {
+    "recorded_at_utc": "2026-11-22T15:25:23.735269+00:00",
+    "scope": "Current working tree and approved private native Gateway setup; earlier checkpoint unchanged",
+    "primary": "cerebras/moonshotai-kimi-k3.1-pro-trial",
+    "fallback": "baseten/meta-models/muse-spark-open-1026",
+    "endpoint": "https://inference.baseten.co/v1",
+    "gateway_configuration_schema_validation": "passed",
+    "private_settings_mode": "0600",
+    "primary_and_unrelated_config_preserved": true,
+    "core_client_budget_citation_guards_preserved": true,
+    "credential_values_saved_in_public_record": false,
+    "compileall": "passed",
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "offline_tests_passed": 326,
+    "browser_tests_passed": 1,
+    "browser_scope": "Real Chrome with mocked APIs; before-submit/report fallback disclosure asserted",
+    "product_secret_screening_files": 123,
+    "baseten_key_in_product_files": false,
+    "live_inference_requests": 0,
+    "service_restarted": false,
+    "runtime_activation_verified": false,
+    "actual_failover_verified": false,
+    "free_allowance_verified": false,
+    "publication_or_push": false
+  }
+}

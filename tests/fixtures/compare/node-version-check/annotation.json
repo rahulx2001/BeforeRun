@@ -1,0 +1,21 @@
+{
+  "id": "B02-compat-compare",
+  "kind": "benign_compatibility_change",
+  "synthetic": true,
+  "source_identity": "example/inert-fixture; target aaa…; baseline bbb…",
+  "command_context": "Root npm_install; statically inferred prepare relationship only",
+  "entry_helper_relationship": "package.json prepare invokes node scripts/check-node.js in both revisions",
+  "original_spans": {
+    "package.json": "Both sides, lines 4–6: unchanged prepare entry",
+    "scripts/check-node.js": "Both sides, line 2: required Node major; lines 3–8: runtime check and harmless messages"
+  },
+  "actual_behavior": "Changes a fictional runtime compatibility message from Node 20 to Node 22; no harmful action",
+  "benign_alternative": "An intentional runtime compatibility update",
+  "acceptable_assessment": "benign within the selected compatibility scope",
+  "required_omissions": ["Runtime execution", "Dependencies", "Downloaded artifacts", "Whole-repository safety"],
+  "expected_changed_paths": ["scripts/check-node.js"],
+  "expected_unchanged_paths": ["package.json"],
+  "expected_change_status": "changed",
+  "execution_claim": "Static prepare relationship only; fixture code was not executed.",
+  "safety_note": "No harmful operation is present. This cannot validate malware detection."
+}

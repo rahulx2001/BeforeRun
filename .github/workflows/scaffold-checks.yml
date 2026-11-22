@@ -1,4 +1,4 @@
-name: Scaffold checks
+name: BeforeRun offline checks
 
 on:
   push:
@@ -8,17 +8,18 @@ permissions:
   contents: read
 
 jobs:
-  scaffold:
+  offline:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install the development framework
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install the trusted development framework
         run: make install PYTHON=python
-      - name: Compile and lint the scaffold
+      - name: Compile, lint, and run offline behavior contracts
         run: make check
-
-# Core behavior tests will be written with the core functionality during the event.
 

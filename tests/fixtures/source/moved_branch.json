@@ -1,0 +1,26 @@
+{
+  "repository": {
+    "id": 101,
+    "owner": {"login": "example"},
+    "name": "inert-fixture",
+    "default_branch": "main",
+    "private": false,
+    "visibility": "public"
+  },
+  "initial_commit": {
+    "sha": "1111111111111111111111111111111111111111",
+    "commit": {"tree": {"sha": "2222222222222222222222222222222222222222"}}
+  },
+  "tree": {
+    "sha": "2222222222222222222222222222222222222222",
+    "tree": [
+      {"path": "package.json", "mode": "100644", "type": "blob"}
+    ],
+    "truncated": false
+  },
+  "source_text": "{\"scripts\":{\"postinstall\":\"node scripts/inert.cjs\"}}\n",
+  "moved_commit": {
+    "sha": "3333333333333333333333333333333333333333",
+    "commit": {"tree": {"sha": "4444444444444444444444444444444444444444"}}
+  }
+}

@@ -1,7 +1,7 @@
 PYTHON ?= python3
 VENV_PYTHON := .venv/bin/python
 
-.PHONY: install dev check
+.PHONY: install dev check browser-check
 
 .venv/bin/python:
 	$(PYTHON) -m venv .venv
@@ -15,6 +15,10 @@ dev: .venv/bin/python
 
 check: .venv/bin/python
 	$(VENV_PYTHON) -m compileall -q src
-	$(VENV_PYTHON) -m ruff check src
-	$(VENV_PYTHON) -m ruff format --check src
+	$(VENV_PYTHON) -m ruff check src tests
+	$(VENV_PYTHON) -m ruff format --check src tests
+	$(VENV_PYTHON) -m pytest -m 'not live and not browser' -q tests
+
+browser-check: .venv/bin/python
+	$(VENV_PYTHON) -m pytest -m 'browser and not live' -q tests
 

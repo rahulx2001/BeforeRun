@@ -16,3 +16,11 @@ data/
 reports/
 *.log
 
+# Assistant runtime and session memory
+memory/
+AGENTS.md
+DREAMS.md
+IDENTITY.md
+SOUL.md
+USER.md
+

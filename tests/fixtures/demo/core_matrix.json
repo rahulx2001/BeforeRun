@@ -1,0 +1,33 @@
+{
+  "scope": "Offline development regression contracts; not held-out model quality or malware accuracy",
+  "live_status": "Required OpenClaw policy/model proof is not established by this matrix",
+  "cases": [
+    {"id":"B01","case":"Ordinary setup","selectors":["tests/test_report_policy.py::test_empty_complete_and_empty_partial_have_different_assessments"]},
+    {"id":"B02","case":"Runtime check/local asset generation","selectors":["tests/test_release_contracts.py::test_real_npm_analyzer_supports_the_mocked_extra_helper_read"]},
+    {"id":"B03","case":"Documented binary download with unread payload","selectors":["tests/test_release_contracts.py::test_documented_download_does_not_certify_unread_payload"]},
+    {"id":"B04","case":"Unused credential-looking text","selectors":["tests/test_release_contracts.py::test_unused_credential_looking_text_has_no_install_malware_claim"]},
+    {"id":"B05","case":"Dummy/no-op simulated flow","selectors":["tests/test_release_contracts.py::test_noop_simulation_can_be_benign_without_forcing_a_malicious_label","tests/test_report_policy.py::test_simulated_source_cannot_claim_real_theft_and_missing_context_is_qualified"]},
+    {"id":"B06","case":"Unchanged hook and changed helper","selectors":["tests/test_compare.py::test_unchanged_hook_changed_helper_has_original_side_evidence"]},
+    {"id":"B07","case":"Behavior in both commits","selectors":["tests/test_compare.py::test_existing_behavior_keeps_both_sides_even_for_identical_commits"]},
+    {"id":"B08","case":"Uncalled helper and unresolved trigger","selectors":["tests/test_npm_setup.py::test_non_lifecycle_scripts_do_not_reach_uncalled_helpers","tests/test_report_policy.py::test_simulated_source_cannot_claim_real_theft_and_missing_context_is_qualified"]},
+    {"id":"B09","case":"Computed paths and unresolved local relationships","selectors":["tests/test_reachability.py::test_computed_and_external_imports_stay_visible_gaps"]},
+    {"id":"B10","case":"npm configuration changes semantics","selectors":["tests/test_npm_setup.py::test_ignore_scripts_suppresses_hooks_without_reading_home_or_helper","tests/test_npm_setup.py::test_custom_shell_and_unreadable_npmrc_remain_explicit_gaps"]},
+    {"id":"R01","case":"Invalid/unsupported input before source/model calls","selectors":["tests/test_review_api.py::test_invalid_input_and_cross_origin_never_start_pipeline"]},
+    {"id":"R02","case":"Hostile redirect and credential forwarding","selectors":["tests/test_github_source.py::test_hostile_redirect_is_rejected_without_callback_or_token_forwarding"]},
+    {"id":"R03","case":"Moving branch after pinning","selectors":["tests/test_github_source.py::test_moved_branch_never_changes_admitted_snapshot_identity"]},
+    {"id":"R04","case":"Missing baseline preserves target","selectors":["tests/test_pipeline.py::test_missing_baseline_keeps_target_and_unconnected_analyzer_is_unsupported"]},
+    {"id":"R05","case":"Oversized/truncated source envelopes","selectors":["tests/test_source_evidence_bounds.py::test_streamed_body_limit_does_not_trust_content_length","tests/test_compare.py::test_large_and_minified_sources_bound_diff_work_before_matching"]},
+    {"id":"R06","case":"Symlink/submodule/LFS/binary never dereferenced","selectors":["tests/test_snapshot.py::test_modes_lfs_and_binary_are_recorded_without_dereference_or_execution"]},
+    {"id":"R07","case":"Tree inventory drives changes","selectors":["tests/test_compare.py::test_tree_facts_cover_add_remove_mode_and_identical_content","tests/test_compare.py::test_incomplete_inventory_cannot_prove_addition_or_removal"]},
+    {"id":"A01","case":"Reviewer-targeting source has no authority","selectors":["tests/test_investigator.py::test_source_injection_cannot_enable_host_tools_or_make_a_fake_tool_result"]},
+    {"id":"A02","case":"Host/cross-job/callback requests rejected","selectors":["tests/test_safe_tools.py::test_forbidden_or_malformed_arguments_have_no_side_effects","tests/test_safe_tools.py::test_whole_batch_and_cross_job_containers_are_validated_before_fetch"]},
+    {"id":"A03","case":"Inert browser writes and allowlisted links","selectors":["tests/test_ui_review.py::test_renderer_uses_inert_dom_writes_and_stale_job_guards"],"additional_evidence":"Real Chrome mocked-API test runs separately through make browser-check"},
+    {"id":"E01","case":"Invented evidence/span/quote/revision","selectors":["tests/test_report_policy.py::test_invented_quote_original_range_side_and_representation_are_rejected","tests/test_report_policy.py::test_fetched_but_not_delivered_is_never_a_checked_reference"]},
+    {"id":"E02","case":"Valid location cannot prove an unrelated conclusion","selectors":["tests/test_release_contracts.py::test_a_relationship_to_another_file_does_not_support_the_observation","tests/test_report_policy.py::test_simulated_source_cannot_claim_real_theft_and_missing_context_is_qualified"]},
+    {"id":"E03","case":"Original-side/diff/minified coordinates","selectors":["tests/test_compare.py::test_diff_hunk_rows_do_not_replace_original_evidence_coordinates","tests/test_evidence.py::test_minified_chunks_never_split_or_invent_utf8_columns"]},
+    {"id":"F01","case":"Bounded rate-limit and transient retries","selectors":["tests/test_openclaw_contract.py::test_redirect_access_and_transient_errors_are_bounded"]},
+    {"id":"F02","case":"Unavailable/malformed reviewer output","selectors":["tests/test_openclaw_contract.py::test_malformed_and_truncated_response_fails","tests/test_investigator.py::test_model_chosen_helper_read_has_exact_canonical_history_and_one_repair"]},
+    {"id":"F03","case":"Cancellation and budget exhaustion","selectors":["tests/test_openclaw_contract.py::test_streamed_envelope_limit_and_active_cancellation","tests/test_safe_tools.py::test_cancel_exhaustion_and_duplicate_calls_cannot_start_new_work","tests/test_review_api.py::test_runtime_deadline_fails_closed_and_releases_slot"]},
+    {"id":"F04","case":"Serious finding retained with unread required source","selectors":["tests/test_report_policy.py::test_checked_serious_finding_survives_unread_required_source_and_invalid_sibling"]}
+  ]
+}

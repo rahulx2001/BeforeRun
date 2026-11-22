@@ -1,0 +1,7 @@
+{
+  "name": "beforerun-inert-benign-fixture",
+  "version": "1.0.0",
+  "scripts": {
+    "prepare": "node scripts/check-node.cjs"
+  }
+}

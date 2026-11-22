@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-11-22T11:23:42.475632+00:00",
+  "authorization_reference": "User reply: Authorize live only with a verified free allowance",
+  "approved_scope": {
+    "case": "one inert memory proof",
+    "max_gateway_attempts": 3,
+    "max_requested_output_tokens_per_attempt": 512,
+    "configuration_changes": false
+  },
+  "configured_provider": "cerebras",
+  "configured_model": "moonshotai-kimi-k3.1-pro-trial",
+  "verified_free_allowance": false,
+  "account_credit_balance_or_expiry_verified": false,
+  "model_eligibility_for_free_credits_verified": false,
+  "sources": [
+    {
+      "url": "https://api.cerebras.ai/v1/models",
+      "http_status": 403,
+      "credentials_sent": false,
+      "configured_model_mentioned": false
+    },
+    {
+      "url": "https://inference-docs.cerebras.ai/models/overview",
+      "http_status": 200,
+      "configured_model_mentioned": false,
+      "observation": "Overview describes shared models on Free Trial and Pay as You Go subject to rate limits and pricing; configured model was not mentioned."
+    },
+    {
+      "url": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "http_status": 200,
+      "configured_model_mentioned": false,
+      "observation": "FAQ states new accounts receive $5 credits after a verified payment method; credits expire 30 days after grant. This does not verify this account balance, expiry or model eligibility."
+    },
+    {
+      "url": "https://www.cerebras.ai/inference",
+      "http_status": 200,
+      "configured_model_mentioned": false
+    }
+  ],
+  "requests_made": "four public unauthenticated GET documentation/metadata reads; no inference",
+  "followup_gateway_requests": 0,
+  "followup_inference_requests": 0,
+  "provider_cost": null,
+  "decision": "Do not execute the prepared proof until the granted free-only prerequisite is verified.",
+  "remaining_evidence": "Provider-backed unexpired free credit/allowance and eligibility for the exact configured model; upstream retry/billing reconciliation.",
+  "raw_bodies_prompts_credentials_or_account_data_saved": false
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "semantics": "npm 11.21.3; static analysis only; no fixture is executed",
+  "cases": {
+    "benign": {
+      "label": "benign",
+      "expectation": "Root prepare connects statically to a local compatibility check. No malicious/suspicious expectation is inferred from this fixture."
+    },
+    "reviewer_targeting": {
+      "label": "reviewer-targeting-text",
+      "expectation": "A comment addressed to the reviewer is a prioritized lead but remains untrusted source data and cannot override evidence policy."
+    },
+    "unsupported_inline": {
+      "label": "unsupported",
+      "expectation": "Inline node code is intentionally unresolved, never executed, and leaves explicit partial-coverage evidence."
+    }
+  }
+}

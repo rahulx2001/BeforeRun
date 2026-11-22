@@ -1,0 +1,50 @@
+{
+  "recorded_at_utc": "2026-11-22T10:40:07.608011+00:00",
+  "producer": "tests/fixtures/demo/record_demo.py",
+  "mode": "offline saved-fixture UI replay",
+  "live_requests": 0,
+  "fixture": "tests/fixtures/jobs/checked_result.json",
+  "fixture_sha256": "0640088ca4be1bbf821485a012191a68296b50fe7d9ce3f559fd5ad721e75140",
+  "viewport": {
+    "width": 1440,
+    "height": 1100
+  },
+  "capture_framing": "Existing UI panels framed at page top; fixture content unchanged.",
+  "frames": [
+    {
+      "file": "01-input.png",
+      "title": "Choose pinned revisions",
+      "sha256": "14ae1087b982ebfd853565749b8228dc6552241a4f3f5aace831f60de1254c84",
+      "render_state_checked": true
+    },
+    {
+      "file": "02-report.png",
+      "title": "Partial fixture report and compatibility comparison",
+      "sha256": "03910705c3a3f084fc886ec228b0a764a2359877e05b0de77e3013c8526e7945",
+      "render_state_checked": true
+    },
+    {
+      "file": "03-evidence.png",
+      "title": "Open an inert source excerpt",
+      "sha256": "c75eede45ce44c6c9aa6e9896c309284acb1318a5af043d59d6792a4cd6fb156",
+      "render_state_checked": true
+    },
+    {
+      "file": "04-coverage.png",
+      "title": "Read exclusions and processing limits",
+      "sha256": "fc792cf46cd5ec619e7e1e7d2b64a21e19c532db4900ab7db3abc64527303686",
+      "render_state_checked": true
+    }
+  ],
+  "visual_review": "completed: prominent mocked label, inert source, partial coverage and paired coverage labels/values; no visible credentials",
+  "live_gate_evidence": false,
+  "release_ready": false,
+  "visually_reviewed_at_utc": "2026-11-22T10:41:23.402822+00:00",
+  "visual_reviewer": "Codex offline release checks agent",
+  "source_sha256": {
+    "src/beforerun/static/index.html": "32f981d06a355db011204518486fa8ecb3a8221dba06598551239a4f38fcb778",
+    "src/beforerun/static/styles.css": "3e29cea53f13e834db7b8c8183920f23e64d0e01c0004f01db8024964e6729ce",
+    "src/beforerun/static/reviews.js": "f41afcf593be8ec094b46f6ff414786640e7e283754da118f557c07e4a48807d",
+    "tests/fixtures/demo/record_demo.py": "a7df35e9c208b4b7f3d5929a77c77ce5b7b3d3027f0f4161bd04c253ac9fde32"
+  }
+}

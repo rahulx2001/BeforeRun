@@ -1,0 +1,224 @@
+{
+  "scope": "Offline development regression contracts; not held-out model quality or malware accuracy",
+  "live_status": "Required OpenClaw policy/model proof is not established by this matrix",
+  "cases": [
+    {
+      "id": "B01",
+      "case": "Ordinary setup",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B02",
+      "case": "Runtime check/local asset generation",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B03",
+      "case": "Documented binary download with unread payload",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B04",
+      "case": "Unused credential-looking text",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B05",
+      "case": "Dummy/no-op simulated flow",
+      "status": "passed",
+      "tests": 2,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B06",
+      "case": "Unchanged hook and changed helper",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B07",
+      "case": "Behavior in both commits",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B08",
+      "case": "Uncalled helper and unresolved trigger",
+      "status": "passed",
+      "tests": 2,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B09",
+      "case": "Computed paths and unresolved local relationships",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "B10",
+      "case": "npm configuration changes semantics",
+      "status": "passed",
+      "tests": 2,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "R01",
+      "case": "Invalid/unsupported input before source/model calls",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "R02",
+      "case": "Hostile redirect and credential forwarding",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "R03",
+      "case": "Moving branch after pinning",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "R04",
+      "case": "Missing baseline preserves target",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "R05",
+      "case": "Oversized/truncated source envelopes",
+      "status": "passed",
+      "tests": 3,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "R06",
+      "case": "Symlink/submodule/LFS/binary never dereferenced",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "R07",
+      "case": "Tree inventory drives changes",
+      "status": "passed",
+      "tests": 3,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "A01",
+      "case": "Reviewer-targeting source has no authority",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "A02",
+      "case": "Host/cross-job/callback requests rejected",
+      "status": "passed",
+      "tests": 6,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "A03",
+      "case": "Inert browser writes and allowlisted links",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "E01",
+      "case": "Invented evidence/span/quote/revision",
+      "status": "passed",
+      "tests": 5,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "E02",
+      "case": "Valid location cannot prove an unrelated conclusion",
+      "status": "passed",
+      "tests": 2,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "E03",
+      "case": "Original-side/diff/minified coordinates",
+      "status": "passed",
+      "tests": 2,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "F01",
+      "case": "Bounded rate-limit and transient retries",
+      "status": "passed",
+      "tests": 5,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "F02",
+      "case": "Unavailable/malformed reviewer output",
+      "status": "passed",
+      "tests": 6,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "F03",
+      "case": "Cancellation and budget exhaustion",
+      "status": "passed",
+      "tests": 3,
+      "missing": [],
+      "scope": "offline development contract"
+    },
+    {
+      "id": "F04",
+      "case": "Serious finding retained with unread required source",
+      "status": "passed",
+      "tests": 1,
+      "missing": [],
+      "scope": "offline development contract"
+    }
+  ],
+  "release_ready": false,
+  "pytest_exit_code": 0
+}

@@ -1,0 +1,5 @@
+{
+  "case": "text_smoke_deny_all",
+  "error_type": "ReadTimeout",
+  "wall_ms": 30038.297999999486
+}

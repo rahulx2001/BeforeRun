@@ -1,0 +1,9 @@
+{
+  "tools": {
+    "deny": [
+      "*"
+    ]
+  },
+  "restored": true,
+  "restore_exit_code": 0
+}

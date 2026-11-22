@@ -1,0 +1,70 @@
+{
+  "recorded_at_utc": "2026-11-22T10:34:20.474290+00:00",
+  "scope": "read-only inspection of retained dedicated-Gateway logs, saved non-secret configuration fields, and installed OpenClaw source",
+  "network_requests": 0,
+  "config_changes": 0,
+  "installed_package_version": "2026.11.6",
+  "running_gateway_version": "unverified; log version fields inspected identify clients, not the Gateway build",
+  "logged_node_runtime_version": "24.22.3",
+  "provider_failure_evidence": {
+    "log_artifact_name": "beforerun-openclaw-gateway-18790.log",
+    "scope_start": "2026-11-22T14:41:52.333+05:30",
+    "scope_end": "2026-11-22T14:42:07.336+05:30",
+    "provider": "cerebras",
+    "configured_model_present": "moonshotai-kimi-k3.1-pro-trial",
+    "http_status": 429,
+    "error_code": "queue_exceeded",
+    "error_type": "too_many_requests_error",
+    "observed_transport_response_count": 5,
+    "response_events": [
+      {"log_line": 355, "gateway_request_number": 1, "http_status": 429, "elapsed_ms": 1117},
+      {"log_line": 358, "gateway_request_number": 2, "http_status": 429, "elapsed_ms": 426},
+      {"log_line": 362, "gateway_request_number": 3, "http_status": 429, "elapsed_ms": 331},
+      {"log_line": 365, "gateway_request_number": 4, "http_status": 429, "elapsed_ms": 429},
+      {"log_line": 368, "gateway_request_number": 5, "http_status": 429, "elapsed_ms": 493}
+    ],
+    "error_event_lines": [356, 359, 363, 366, 369],
+    "interpretation": "provider queue/rate rejection; trial expiration, account quota exhaustion and eventual successful inference are not established",
+    "billing_tokens_cost": "unknown; no independently verified pricing or numeric account limits were found in inspected safe fields"
+  },
+  "restricted_smoke_failure_evidence": {
+    "timestamp": "2026-11-22T14:52:50.384+05:30",
+    "log_lines": [391, 393, 394],
+    "classification": "explicit allowlist has no callable tools",
+    "static_diagnostic_match": "No callable tools remain after resolving explicit tool allowlist",
+    "static_detail_match": "no registered tools matched",
+    "request_tool_choice": "none",
+    "request_client_tools_after_tool_choice": [],
+    "configured_allowlist_during_attempt": ["br_read_excerpt"],
+    "interpretation": "text-only smoke plus an explicit caller-tool requirement leaves no callable tool; this failure does not demonstrate that native caller tools need a plugin"
+  },
+  "saved_policy_observations": {
+    "reviewer_tools": {"deny": ["*"]},
+    "reviewer_allow_present": false,
+    "global_tool_allow_present": false,
+    "global_tool_deny": null,
+    "reviewer_context_injection": "never",
+    "default_startup_enabled": false,
+    "reviewer_skills": [],
+    "agent_to_agent_enabled": false,
+    "session_visibility": "agent",
+    "gateway_bind": "loopback",
+    "sandbox_mode_explicitly_configured": false,
+    "effective_gateway_application": "unverified"
+  },
+  "candidate_next_procedure": {
+    "config_mutation_needed_for_candidate": false,
+    "policy": "retain reviewer deny=[\"*\"] with no explicit allowlist; do not set global deny=[\"*\"] to enable native caller tools",
+    "text_smoke": "tools=[], tool_choice=none under the retained deny-all reviewer policy",
+    "native_fixture_read": "server-owned caller tools=[br_read_excerpt] over inert source; bounded dispatch only after returned call is validated",
+    "proof_status": "static candidate only; live caller-tool visibility, host denial, bootstrap/memory isolation and actual provider response still require authorized verification"
+  },
+  "static_source_locations": [
+    {"file": "dist/openai-compatible-input-limits-BgJ-Gyyo.mjs", "line": 240, "topic": "tool_choice=none removes caller tools"},
+    {"file": "dist/attempt-S43tUjWN.mjs", "line": 344, "topic": "native caller-tool gate checks global deny-all; caller tools handled separately from core tools"},
+    {"file": "dist/attempt-S43tUjWN.mjs", "line": 6929, "topic": "empty explicit allowlist diagnostic"},
+    {"file": "dist/attempt-S43tUjWN.mjs", "line": 5417, "topic": "native client tools combined with the filtered core tool surface"},
+    {"file": "dist/attempt-tool-run-context-DwM7ivmG.mjs", "line": 13, "topic": "runtime caller-tool allowlist comes from per-run toolsAllow override"},
+    {"file": "docs/gateway/openai-http-api.md", "line": 219, "topic": "caller function-tool choice is distinct from internal OpenClaw tools"}
+  ]
+}

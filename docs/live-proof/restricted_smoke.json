@@ -1,0 +1,17 @@
+{
+  "case": "text_smoke_restricted_caller",
+  "max_output_tokens": 64,
+  "http_status": 500,
+  "response_bytes": 57,
+  "body_sha256": "436f280ed7e7a0c1f649ae9f2347393d57a6bb7748d83ccb36a2cb0a863c8c67",
+  "response_model": null,
+  "connection_ok": false,
+  "tool_call_count": 0,
+  "usage": {
+    "prompt_tokens": null,
+    "completion_tokens": null,
+    "total_tokens": null
+  },
+  "error_code": null,
+  "wall_ms": 820.271500000672
+}

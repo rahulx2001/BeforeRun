@@ -1,0 +1,13 @@
+BeforeRun
+Copyright 2026 BeforeRun contributors
+
+BeforeRun is inspired by Gatekeeper by lb2002:
+https://github.com/lb2002/gatekeeper
+
+The recorded S07-S13 implementation introduces no copied Gatekeeper application
+modules and does not imply upstream endorsement. Any earlier incorporated material
+retains its original copyright and license obligations.
+
+Python dependencies and operator-supplied OpenClaw, Node, Python, and Chrome are
+not bundled in this source snapshot. Their separate licenses and notices are
+inventoried in docs/DEPENDENCY_NOTICES.md and must be preserved if redistributed.

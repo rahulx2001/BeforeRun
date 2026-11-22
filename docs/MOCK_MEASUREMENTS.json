@@ -1,0 +1,72 @@
+{
+  "mode": "MOCK_HTTP_DEVELOPMENT_REGRESSION",
+  "runs": [
+    {
+      "run": 1,
+      "wall_ms": 11.439082998549566,
+      "completion": "complete",
+      "assessment": "benign",
+      "mock_github_requests": 5,
+      "mock_reviewer_requests": 3,
+      "model_shown_files": 2,
+      "tool_operations": 2
+    },
+    {
+      "run": 2,
+      "wall_ms": 8.957707999798004,
+      "completion": "complete",
+      "assessment": "benign",
+      "mock_github_requests": 5,
+      "mock_reviewer_requests": 3,
+      "model_shown_files": 2,
+      "tool_operations": 2
+    },
+    {
+      "run": 3,
+      "wall_ms": 8.26437499927124,
+      "completion": "complete",
+      "assessment": "benign",
+      "mock_github_requests": 5,
+      "mock_reviewer_requests": 3,
+      "model_shown_files": 2,
+      "tool_operations": 2
+    },
+    {
+      "run": 4,
+      "wall_ms": 8.168790998752229,
+      "completion": "complete",
+      "assessment": "benign",
+      "mock_github_requests": 5,
+      "mock_reviewer_requests": 3,
+      "model_shown_files": 2,
+      "tool_operations": 2
+    },
+    {
+      "run": 5,
+      "wall_ms": 8.113583004160319,
+      "completion": "complete",
+      "assessment": "benign",
+      "mock_github_requests": 5,
+      "mock_reviewer_requests": 3,
+      "model_shown_files": 2,
+      "tool_operations": 2
+    }
+  ],
+  "timing_boundary": "Pipeline only, mocked HTTP; excludes queue, browser and live latency",
+  "median_ms": 8.26437499927124,
+  "range_ms": [
+    8.113583004160319,
+    11.439082998549566
+  ],
+  "provider_cost": "unknown; no live provider request made",
+  "provider_tokens": "not measured; mock usage metadata is not billable usage",
+  "accuracy": "not measured; not an independent held-out malware corpus",
+  "working_tree_source_sha256": "c48f543d6e2c96a598144087541ed90f4a37e629a0f65f5325dd8b1e9e21bed7",
+  "python": "3.12.16",
+  "packages": {
+    "fastapi": "0.162.7",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.3",
+    "pytest": "9.2.0"
+  }
+}
