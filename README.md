@@ -24,6 +24,27 @@ Before you clone or run anything, paste the GitHub URL into BeforeRun. BeforeRun
 
 ---
 
+## 🚨 The Threat Reality: In an Era of Everyday Hacks, Fighting AI with AI
+
+Every single week brings headlines of major tech companies, open-source packages, and enterprise clouds being compromised:
+- **Hacking Has Become Industrialized:** Attackers no longer bother trying to break through multi-million dollar corporate firewalls. Instead, they target the developer's workstation—the soft underbelly where production API tokens, SSH keys, AWS credentials, and `.env` secrets live.
+- **The Rise of AI-Augmented Malware:** Both state-of-the-art frontier models (SOTA LLMs) and lightweight fine-tuned open models are now routinely weaponized by threat actors to:
+  1. **Synthesize Polymorphic Payloads:** Generate deceptive, obfuscated code that changes variable signatures and syntax across commits to easily evade legacy regex and static rule scanners.
+  2. **Automate Supply-Chain Poisoning at Scale:** Mass-scan thousands of popular open-source packages, locate unmonitored lifecycle hooks, and submit Trojanized pull requests or compromised version bumps.
+  3. **Camouflage Malicious Intent:** Disguise credential scrapers, network beacons, and reverse shells inside plausible, innocent-looking setup scripts (`scripts/check-node.js`, `build-native.js`).
+
+### 🛡️ The Asymmetry Dilemma: Why Yesterday's Defenses Fail
+When attackers use AI to craft subtle, context-aware exploits in seconds, **static linters, syntax checks, and human code reviews cannot keep up**. And traditional LLM security audits running on cloud GPUs (30–50 tokens/sec) take 45 to 60+ seconds per review—so developers inevitably get frustrated, skip the check, and run `npm install` blindly.
+
+### ⚡ The Cerebras + Kimi K3.1 Pro + OpenClaw Safeguard
+**BeforeRun levels the playing field by fighting AI attacks with ultra-fast AI defense.**  
+By running **Kimi K3.1 Pro on Cerebras CS-3 at 1,800+ tokens/second**, orchestrated by an **OpenClaw autonomous agent**, BeforeRun provides an active, real-time safeguard:
+- **Instant Semantic Forensics:** Decodes obfuscation, traces execution flow, and reasons about runtime intent before code touches your disk.
+- **Sub-Second Defense (1.8s – 2.4s):** Audits multi-file setup pipelines at wafer-scale wire speed, making rigorous security checks seamless and instantaneous right before installation.
+- **Cryptographic Trust:** Every finding is validated against an immutable evidence ledger with verified source lines—giving developers concrete proof, not hallucinations.
+
+---
+
 ## ⚡ The Cerebras Speed Advantage
 
 > *Why does inference speed matter for security? Because developers won't wait 45 seconds before running `npm install`.*
@@ -232,54 +253,56 @@ Use these optimized templates for high organic impressions, upvotes, and communi
 ### 🐦 X (Twitter) Submission Thread
 
 ```text
-🚨 What actually happens when you run `npm install`?
+🚨 Everyday hacks are skyrocketing. Every week, another company is breached through compromised packages and poisoned repos.
 
-Lifecycle scripts execute arbitrary code on your machine with full permissions. Attackers sneak credential stealers into minor package updates every single day.
+With attackers now using SOTA LLMs and fine-tuned models to generate polymorphic malware and stealthy install scripts, traditional linters are completely blind.
 
-Introducing BeforeRun 🛡️⚡ — See what runs before you run it.
+Introducing BeforeRun 🛡️⚡ — The AI Safeguard: See what runs before you run it.
 
 🧵 (1/4) 👇
 
-(2/4) Why didn't developers audit this before?
-Because standard GPU LLMs (30-50 TPS) take 45+ seconds to do a 6-turn multi-file AST investigation. Nobody waits 45 seconds before installing a package.
+(2/4) Fighting AI with Ultra-Fast AI:
+Attackers generate stealthy exploits in seconds. But standard GPU LLMs (30-50 TPS) take 45+ seconds to audit a package—nobody waits that long before running `npm install`.
 
-Enter @CerebrasSystems. Running Kimi K3.1 Pro on Cerebras at 1,800+ TPS, BeforeRun completes deep multi-turn code security audits in sub-seconds (~2.1s end-to-end)! 🚀
+Enter @CerebrasSystems. Running Kimi K3.1 Pro on Cerebras at 1,800+ TPS, BeforeRun completes a deep 6-turn semantic code security audit in sub-seconds (~2.1s end-to-end)! 🚀
 
-(3/4) Key Features:
-🛡️ Zero-Execution: Treats repos as pure data; never runs untrusted code
-🔍 Verifiable Evidence: Cryptographic citations with exact GitHub line numbers
-⚖️ Side-by-Side Diffs: Compare revisions before running (e.g. Node 20→22 upgrade vs injected stealers)
-🤖 @OpenClaw Agent Harness with failover resilience
+(3/4) Key Safeguards:
+🛡️ Zero-Execution: Reads repos strictly as immutable data via GitHub API; never runs untrusted code
+🔍 Cryptographic Evidence: Quotes exact GitHub lines with SHA-verified provenance (zero hallucinations)
+⚖️ Revision Diffing: Spots benign updates (Node 20→22) vs stealthy credential scrapers
+🤖 @OpenClaw Agent Harness with Cerebras primary + Baseten fallback
 
-(4/4) Check out the code & try the demo:
+(4/4) Protect your developer machine & company credentials:
 🔗 GitHub: https://github.com/rahulx2001/BeforeRun
-⚡ Built for the Cerebras x Kimi K3.1 Pro Hackathon!
-#AI #CyberSecurity #Cerebras #OpenClaw #DevTools #Infosec
+⚡ Built with 💜 for the Cerebras x Kimi K3.1 Pro Hackathon!
+#AI #CyberSecurity #Cerebras #OpenClaw #DevTools #Infosec #AppSec
 ```
 
 ### 🔴 Reddit Submission (r/LocalLLaMA, r/programming, r/netsec)
 
 ```text
-Title: We built BeforeRun: Real-time AI security audit for GitHub repos before you run `npm install` (Powered by Kimi K3.1 Pro on Cerebras at 1,800+ TPS)
+Title: Hacking is surging via AI-generated supply-chain attacks. We built BeforeRun: Real-time AI security preflight for GitHub repos before `npm install` (Powered by Kimi K3.1 Pro on Cerebras at 1,800+ TPS)
 
 Hey everyone!
 
-Every developer has hesitated before running `npm install` or `pip install` on a new open-source repo or after a minor dependency bump. Postinstall scripts and lifecycle hooks have become one of the most common vectors for supply chain attacks (stealing `.env` files, SSH keys, AWS credentials).
+Every day we hear about companies getting hacked, API keys leaking, and open-source packages being hijacked. Threat actors are increasingly using SOTA and fine-tuned LLMs to craft polymorphic, stealthy malware that slips past regex linters and static scanners. 
 
-We built **BeforeRun** (https://github.com/rahulx2001/BeforeRun) — an open-source, evidence-first preflight inspector.
+The softest target in the software industry is still the developer’s workstation. When you run `npm install` or `pip install`, lifecycle hooks (`preinstall`, `postinstall`, `prepare`) execute arbitrary code silently with your machine's full user permissions—draining SSH keys, AWS credentials, and `.env` files.
 
-### How it works:
-1. Zero-Execution Sandbox: BeforeRun reads repository source strictly as immutable data via GitHub API. It never clones or executes untrusted code.
-2. Setup Entry Point Tracing: It parses lifecycle hooks (`preinstall`, `install`, `postinstall`, `prepare`) and follows helper scripts (`check-node.js`, `build.js`).
-3. Multi-Turn OpenClaw Investigation: An autonomous OpenClaw agent uses bounded snapshot tools (`br_read_file`, `br_list_files`, `br_read_diff`) to investigate code paths.
-4. Cryptographic Evidence Ledger: Every single finding is validated against an immutable evidence ledger with verbatim source quotes and line numbers. Zero hallucinated vulnerabilities.
+We built **BeforeRun** (https://github.com/rahulx2001/BeforeRun) — an open-source, evidence-first AI safeguard against supply chain attacks.
 
-### Why Cerebras speed was a game changer:
-A thorough code audit requires 5-8 iterative reasoning turns. On standard GPU providers running at 30-40 tokens/sec, this took 40-60 seconds — completely impractical for interactive developer workflows.
+### How it safeguards your machine:
+1. Zero-Execution Ingestion: BeforeRun reads repository code strictly as immutable data via the GitHub REST API. Untrusted source code is NEVER cloned, imported, or executed on your machine.
+2. Lifecycle Hook Tracing: It traces all package setup hooks and helper scripts (`check-node.js`, `build-native.js`) across the repository tree.
+3. Multi-Turn OpenClaw Agent: Uses bounded snapshot tools (`br_read_file`, `br_list_files`, `br_read_diff`) to reason through obfuscated scripts and compare revisions against earlier commits.
+4. Cryptographic Evidence Ledger: Every single alert is tied to verbatim quoted code spans and verified file digests. Zero hallucinated vulnerabilities.
 
-On Cerebras running Kimi K3.1 Pro at 1,800+ tokens/second, the entire 6-turn investigation executes in sub-seconds!
+### Why Cerebras speed is the game-changer for cybersecurity:
+A deep code security audit takes 5–8 iterative reasoning turns. On standard GPU providers running at 30–40 tokens/sec, this took 45–60 seconds—far too slow for any developer waiting at their terminal.
 
-Check out the repo, run the test suite (334 passing tests), and let us know what you think!
+On Cerebras CS-3 running Kimi K3.1 Pro at 1,800+ tokens/second, the entire multi-turn investigation executes in under 2 seconds! This finally makes proactive, code-level AI security viable for everyday developer workflows.
+
+Check out the repo, run the test suite (334 passing tests), and let us know your feedback!
 GitHub: https://github.com/rahulx2001/BeforeRun
 ```
 
