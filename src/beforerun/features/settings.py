@@ -29,8 +29,8 @@ class Settings:
     max_envelope_bytes: int = 256 * 1024
     max_tree_envelope_bytes: int = 4 * 1024 * 1024
     max_tree_entries: int = 20_000
-    max_input_tokens: int = 50_000
-    max_output_tokens: int = 6_000
+    max_input_tokens: int = 160_000
+    max_output_tokens: int = 12_000
     max_active_reviews: int = 1
     max_queued_reviews: int = 2
     job_ttl_seconds: float = 3600.0
