@@ -141,7 +141,17 @@ BeforeRun features a clean, high-contrast reactive dashboard designed for rapid 
 
 ---
 
-## 🎬 60-Second Demo Video Script
+## 🎬 60-Second Demo Video
+
+🎥 **Watch the official demo video:**  
+[![Watch Demo Video](docs/demo/01-input.png)](https://github.com/rahulx2001/BeforeRun/raw/main/docs/demo/beforerun-demo.mp4)
+
+* **Direct Video File Link:** [`docs/demo/beforerun-demo.mp4`](docs/demo/beforerun-demo.mp4)
+* **Raw Video URL:** [`https://github.com/rahulx2001/BeforeRun/raw/main/docs/demo/beforerun-demo.mp4`](https://github.com/rahulx2001/BeforeRun/raw/main/docs/demo/beforerun-demo.mp4)
+
+---
+
+### 📝 Video Script & Breakdown
 
 Designed in accordance with the [Cerebras Video Demo Starter Kit](https://github.com/wkasekende/cerebras-video-demos):
 
